@@ -1,0 +1,20 @@
+.hello-message {
+    font-family: Arial, Helvetica, sans-serif;
+    color:rgb(212, 7, 7);
+    font-style: italic;
+    margin-left: 500px;
+    margin-top: 10px;
+}
+
+.navbar-light .navbar-brand {
+    font-family: URW Chancery L, cursive;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 30px;
+    margin-right: 10px;
+    margin-top: -11px;
+    color: rgb(212, 7, 7);
+}
+.navbar-expand-lg .navbar-nav {
+    margin-top: 6px;
+}
