@@ -2,8 +2,7 @@
     font-family: Arial, Helvetica, sans-serif;
     color:rgb(212, 7, 7);
     font-style: italic;
-    margin-left: 500px;
-    margin-top: 10px;
+    margin-top: 23px;
 }
 
 .navbar-light .navbar-brand {
@@ -12,7 +11,6 @@
     font-weight: bold;
     font-size: 30px;
     margin-right: 10px;
-    margin-top: -11px;
     color: rgb(212, 7, 7);
 }
 .navbar-expand-lg .navbar-nav {
