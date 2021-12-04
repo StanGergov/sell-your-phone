@@ -2,6 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Header from "./components/HeaderComponent/Header";
 import Home from './components/HomeComponent/Home';
+import AllPhones from './components/AllPhones/AllPhones';
 import Footer from './components/FooterComponent/Footer';
 
 function App() {
@@ -9,7 +10,8 @@ function App() {
     <div className="App">
      <Header />
 
-     <Home />
+     {/* <Home /> */}
+     <AllPhones />
 
      <Footer />
     </div>

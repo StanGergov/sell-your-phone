@@ -13,10 +13,10 @@ const Home = () => {
                 />
                 <Carousel.Caption>
                     <h3 className="slide-title">Sell your phone</h3>
-                    {/* <p>If you want to sell your phone, create your sales ad.</p>
-                    <Button variant="danger">Create ad</Button> */}
-                    <p>If you want to sell your phone, you need to login first.</p>
-                    <Button variant="danger">Login</Button>
+                    <p>If you want to sell your phone, create your sales ad.</p>
+                    <Button variant="danger">Create ad</Button>
+                    {/* <p>If you want to sell your phone, you need to login first.</p>
+                    <Button variant="danger">Login</Button> */}
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>

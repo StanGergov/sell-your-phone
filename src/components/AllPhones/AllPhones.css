@@ -1,0 +1,15 @@
+
+
+.row-cols-md-2>* {
+    width: 20%;
+    margin: 20px;
+}
+
+.g-4 {
+    margin: 80px;
+}
+
+.img {
+    height: 246px;
+    width: 246px;
+}
