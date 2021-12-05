@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Carousel, Button } from 'react-bootstrap';
 
 import './Home.css';
@@ -14,9 +15,9 @@ const Home = () => {
                 <Carousel.Caption>
                     <h3 className="slide-title">Sell your phone</h3>
                     {/* <p>If you want to sell your phone, create your sales ad.</p>
-                    <Button variant="danger">Create ad</Button> */}
+                    <Button as={Link} to="/create" variant="danger">Create ad</Button> */}
                     <p>If you want to sell your phone, you need to login first.</p>
-                    <Button variant="danger" href= "/login">Login</Button>
+                    <Button as={Link} to="/login" variant="danger">Login</Button>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
@@ -29,7 +30,7 @@ const Home = () => {
                 <Carousel.Caption>
                     <h3 className="slide-title">Buy a phone</h3>
                     <p>If you want to buy a phone, check what our users have to offer.</p>
-                    <Button variant="danger" href= "/allphones">Check here</Button>
+                    <Button as={Link} to="/allphones" variant="danger">Check here</Button>
                 </Carousel.Caption>
             </Carousel.Item>
         </Carousel>
