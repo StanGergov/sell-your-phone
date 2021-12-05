@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Route } from 'react-router';
 
 import Header from "./components/HeaderComponent/Header";
 import Home from './components/HomeComponent/Home';
@@ -12,10 +13,10 @@ function App() {
     <div className="App">
      <Header />
 
-     {/* <Home /> */}
-     {/* <AllPhones /> */}
-     {/* <Login /> */}
-     <Register />
+     < Route path= "/" exact component= {Home} />
+     < Route path= "/allphones" component= {AllPhones} />
+     < Route path= "/login" component= {Login} />
+     < Route path= "/register" component= {Register} />
 
      <Footer />
     </div>
