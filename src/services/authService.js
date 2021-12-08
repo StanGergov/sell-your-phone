@@ -11,4 +11,15 @@ export const login = (email, password) => {
         .then(res => res.json())
         .then(result => result)
         .catch(err => console.log(err))
+};
+
+export const register = (email, password) => {
+    return fetch(`${baseUrl}/users/register`, {
+        method: 'POST',
+        'content-type': 'application/json',
+        body: JSON.stringify({ email, password }),
+    })
+        .then(res => res.json())
+        .then(result => result)
+        .catch(err => console.log(err))
 }
