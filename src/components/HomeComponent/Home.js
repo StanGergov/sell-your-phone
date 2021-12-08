@@ -3,7 +3,26 @@ import { Carousel, Button } from 'react-bootstrap';
 
 import './Home.css';
 
+import { useAuthContext } from '../../contexts/authContext';
+
 const Home = () => {
+
+    let { user } = useAuthContext();
+
+    let userScreen = (
+        <>
+            <p>If you want to sell your phone, create your sales ad.</p>
+            <Button as={Link} to="/create" variant="danger">Create ad</Button>
+        </>
+    );
+
+    let guestScreen = (
+        <>
+            <p>If you want to sell your phone, you need to login first.</p>
+            <Button as={Link} to="/login" variant="danger">Login</Button>
+        </>
+    )
+
     return (
         <Carousel>
             <Carousel.Item>
@@ -14,10 +33,12 @@ const Home = () => {
                 />
                 <Carousel.Caption>
                     <h3 className="slide-title">Sell your phone</h3>
-                    {/* <p>If you want to sell your phone, create your sales ad.</p>
-                    <Button as={Link} to="/create" variant="danger">Create ad</Button> */}
-                    <p>If you want to sell your phone, you need to login first.</p>
-                    <Button as={Link} to="/login" variant="danger">Login</Button>
+                    {
+                        user.email
+                            ? userScreen
+                            : guestScreen
+                    }
+
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>

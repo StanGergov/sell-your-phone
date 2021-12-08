@@ -1,10 +1,32 @@
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 
-
 import './Header.css'
 
+import { useAuthContext } from '../../contexts/authContext';
+
 const Header = () => {
+
+    let { user } = useAuthContext();
+
+    console.log(user);
+
+    let userNav = (
+        <>
+            <Nav.Link as={Link} to="/myphones">My phones</Nav.Link>
+            <Nav.Link as={Link} to="/create">Create ad</Nav.Link>
+            <Nav.Link as={Link} to="#link">Logout</Nav.Link>
+        </>
+    );
+
+    let guestNav = (
+        <>
+            <Nav.Link as={Link} to="/login">Login</Nav.Link>
+            <Nav.Link as={Link} to="register">Register</Nav.Link>
+        </>
+    )
+
+
     return (
         <Navbar bg="light" expand="lg">
             <Container>
@@ -14,14 +36,20 @@ const Header = () => {
                     <Nav className="me-auto">
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
                         <Nav.Link as={Link} to="/allphones">All phones</Nav.Link>
-                        <Nav.Link as={Link} to="/myphones">My phones</Nav.Link>
-                        <Nav.Link as={Link} to="/create">Create ad</Nav.Link>
                         <Nav.Link as={Link} to="howitworks">How it works</Nav.Link>
-                        <Nav.Link as={Link} to="/login">Login</Nav.Link>
-                        <Nav.Link as={Link} to="register">Register</Nav.Link>
-                        <Nav.Link as={Link} to="#link">Logout</Nav.Link>
+                        {
+                            user.email
+                                ? userNav
+                                : guestNav
+                        }
+                        {console.log(user.email)}
+
                     </Nav>
-                    <p className="hello-message">Hello, user</p>
+                    {
+                        user.email
+                            ? <p className="hello-message">Hello, {user.email}</p>
+                            : null
+                    }
                 </Navbar.Collapse>
             </Container>
         </Navbar>

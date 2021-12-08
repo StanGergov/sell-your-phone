@@ -18,7 +18,7 @@ const Create = () => {
             <Form className="ad-form" onSubmit={ createNewAd }>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Brand</Form.Label>
-                    <Form.Control type="text" name="Brand" placeholder="Samsung, Apple, Sony, Nokia..." />
+                    <Form.Control type="text" name="brand" placeholder="Samsung, Apple, Sony, Nokia..." />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -45,6 +45,12 @@ const Create = () => {
                 </Form.Select>
 
                 <Form.Label name="accessories">Accessories</Form.Label>
+                {/* <form name="accessories">
+                    <input type="checkbox" name="box">Box</input>
+                    <input type="checkbox" name="charger">Charger</input>
+                    <input type="checkbox" name="cable">Cable</input>
+                    <input type="checkbox" name="headphones">Headphones</input>
+                </form> */}
                 <div className="mb-3">
                     <Form.Check
                         inline
@@ -52,6 +58,7 @@ const Create = () => {
                         name="box"
                         type="checkbox"
                         id="box"
+                        
                     />
                     <Form.Check
                         inline

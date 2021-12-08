@@ -1,6 +1,8 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Route, Switch } from 'react-router';
+import { Route, Routes } from 'react-router-dom';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { AuthProvider } from './contexts/authContext';
 import Header from "./components/HeaderComponent/Header";
 import Home from './components/HomeComponent/Home';
 import AllPhones from './components/AllPhonesComponent/AllPhones';
@@ -11,21 +13,24 @@ import Create from './components/CreateComponent/Create';
 
 function App() {
   return (
-    <div className="App">
-      <Header />
+    <AuthProvider>
+      <div className="App">
+        <Header />
+        <main className="site-content">
+          <Routes>
 
-      <Switch>
+            < Route path="/" element={<Home />} />
+            < Route path="/allphones" element={<AllPhones />} />
+            < Route path="/create" element={<Create />} />
+            < Route path="/login" element={<Login />} />
+            < Route path="/register" element={<Register />} />
 
-        < Route path="/" exact component={Home} />
-        < Route path="/allphones" component={AllPhones} />
-        < Route path="/create" component={Create} />
-        < Route path="/login" component={Login} />
-        < Route path="/register" component={Register} />
+          </Routes>
+        </main>
 
-      </Switch>
-
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </AuthProvider>
   );
 }
 
