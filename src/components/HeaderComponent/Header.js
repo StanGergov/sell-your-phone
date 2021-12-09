@@ -15,7 +15,7 @@ const Header = () => {
         <>
             <Nav.Link as={Link} to="/myphones">My phones</Nav.Link>
             <Nav.Link as={Link} to="/create">Create ad</Nav.Link>
-            <Nav.Link as={Link} to="#link">Logout</Nav.Link>
+            <Nav.Link as={Link} to="/logout">Logout</Nav.Link>
         </>
     );
 

@@ -9,8 +9,7 @@ export const login = (email, password) => {
         body: JSON.stringify({ email, password })
     })
         .then(res => res.json())
-        .then(result => result)
-        .catch(err => console.log(err))
+        .catch(err => console.log(err));
 };
 
 export const register = (email, password) => {
@@ -20,6 +19,14 @@ export const register = (email, password) => {
         body: JSON.stringify({ email, password }),
     })
         .then(res => res.json())
-        .then(result => result)
-        .catch(err => console.log(err))
-}
+        .catch(err => console.log(err));
+};
+
+export const logout = (accessToken) => {
+    return fetch(`${baseUrl}/users/logout`, {
+        headers: {
+            'X-Authorization': accessToken
+        }
+    })
+    .catch(err => console.log(err));
+};

@@ -16,7 +16,7 @@ const Register = () => {
     const onRegister = (e) => {
         e.preventDefault();
 
-        let { email, password, rePassword } = Object.fromEntries(new FormData(e.currentTarget));
+        let { email, password,rePassword } = Object.fromEntries(new FormData(e.currentTarget));
 
         if (password !== rePassword) {
             throw new Error('Passwords missmatch');
