@@ -15,7 +15,7 @@ const Create = () => {
     return (
         <>
             <h1 className="page-title">Create an ad for your phone</h1>
-            <Form className="ad-form" onSubmit={ createNewAd }>
+            <Form className="ad-form" onSubmit={createNewAd}>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Brand</Form.Label>
                     <Form.Control type="text" name="brand" placeholder="Samsung, Apple, Sony, Nokia..." />
@@ -44,15 +44,18 @@ const Create = () => {
                     <option value="5 New">5 New</option>
                 </Form.Select>
 
-                <Form.Label name="accessories">Accessories</Form.Label>
-                {/* <form name="accessories">
-                    <input type="checkbox" name="box">Box</input>
-                    <input type="checkbox" name="charger">Charger</input>
-                    <input type="checkbox" name="cable">Cable</input>
-                    <input type="checkbox" name="headphones">Headphones</input>
-                </form> */}
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                    <Form.Label>Accessories</Form.Label>
+                    <Form.Control type="text" name="accessories" placeholder="Box, Charger, Cabel..." />
+                </Form.Group>
+
+                {/* <Form.Label >Accessories</Form.Label>
                 <div className="mb-3">
-                    <Form.Check
+                    <input type= "checkbox" lable="Box" inine="true" id="box">Box</input>
+                    <input type= "checkbox" lable="charger" inine="true" id="charger">Charger</input>
+                    <input type= "checkbox" lable="cable" inine="true" id="cable">Cable</input>
+                    <input type= "checkbox" lable="headphones" inine="true" id="headphones">Headphones</input> */}
+                    {/* <Form.Check
                         inline
                         label="Box"
                         name="box"
@@ -80,12 +83,12 @@ const Create = () => {
                         name="headphones"
                         type="checkbox"
                         id="headphones"
-                    />
-                </div>
+                    /> */}
+                {/* </div> */}
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Notes</Form.Label>
-                    <Form.Control type="text" name="notes" placeholder="Notes" />
+                    <Form.Control type="text" name="notes" placeholder="Notes..." />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Price</Form.Label>

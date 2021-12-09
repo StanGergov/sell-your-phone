@@ -9,8 +9,6 @@ const Header = () => {
 
     let { user } = useAuthContext();
 
-    console.log(user);
-
     let userNav = (
         <>
             <Nav.Link as={Link} to="/myphones">My phones</Nav.Link>
@@ -42,8 +40,6 @@ const Header = () => {
                                 ? userNav
                                 : guestNav
                         }
-                        {console.log(user.email)}
-
                     </Nav>
                     {
                         user.email
