@@ -1,20 +1,25 @@
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 
-import {Button} from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 import './Details.css';
 
-const phone = {
-    accessories: "box, charger, cable",
-    brand: "apple",
-    color: "black",
-    grade: "4 Almost like new",
-    imgUrl: "https://m.media-amazon.com/images/I/61o3iuZ0aXL._AC_SL1500_.jpg",
-    model: "iphone",
-    notes: "sdssfdasdf",
-    price: "2500",
-};
+import * as phoneServices from '../../services/phoneService';
 
 
 const Details = () => {
+
+    const { id } = useParams();
+
+    let [phone, setPhone] = useState([]);
+
+    useEffect(() => {
+        phoneServices.getOne(id)
+            .then(res => res.json())
+            .then(data => {
+                setPhone(data);
+            })
+    }, []);
 
     return (
         <div>

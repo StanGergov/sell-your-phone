@@ -1,16 +1,32 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router';
 import { Form, Button } from 'react-bootstrap';
 
 import './Create.css';
 
+import * as phoneServices from '../../services/phoneService';
+import { useAuthContext } from '../../contexts/authContext';
+
 
 const Create = () => {
 
+    const { user } = useAuthContext();
+    const navigate = useNavigate();
+
     const createNewAd = (e) => {
-        e.preventDefault()
+        e.preventDefault();
 
         const formDate = new FormData(e.target);
-        console.log(Object.fromEntries(formDate));
+       
+        const phoneData = Object.fromEntries(formDate);
+
+        phoneServices.create(phoneData, user.accessToken)
+            .then((res) => res.json())
+            .then(data => {
+                navigate(`/details/${data._id}`);
+            })
+            .catch(err => console.log(err))
+
     }
 
 
@@ -24,7 +40,7 @@ const Create = () => {
     return (
         <>
             <h1 className="page-title">Create an ad for your phone</h1>
-            <Form className="ad-form" onSubmit={createNewAd}>
+            <Form className="ad-form" method="POST" onSubmit={createNewAd}>
                 <Form.Group className="mb-3" >
                     <Form.Label>Brand</Form.Label>
                     <Form.Control type="text" name="brand" placeholder="Samsung, Apple, Sony, Nokia..." required />

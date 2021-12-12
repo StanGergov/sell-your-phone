@@ -10,6 +10,25 @@
 }
 
 .img {
-    height: 246px;
-    width: 246px;
+    height: 264px;
+    width: auto;
+}
+
+.card-img-top{
+    height: 264px;
+    width: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.phone-card :hover{
+    border:lightcoral 2px;
+    background-color: lightcoral;
+    color: black;
+}
+
+.phone-card{
+    text-decoration: none;
+    color: black
 }

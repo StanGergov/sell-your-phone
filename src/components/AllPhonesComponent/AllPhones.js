@@ -1,71 +1,51 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Row, Col, Card } from 'react-bootstrap';
 import './AllPhones.css';
 
+import * as phoneServices from '../../services/phoneService';
+
 const AllPhones = () => {
 
-    const phones = [
-        {
-            model: 'Samsung Galaxy Note 10 plus',
-            imgUrl: 'https://m.media-amazon.com/images/I/51RauKMrouL._AC_SX522_.jpg',
-            description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
-            price: 800,
-            _id: '1',
-        },
-        {
-            model: 'Apple iPhone 13 pro Max',
-            imgUrl: 'https://istyle.bg/media/catalog/product/i/p/iphone_13_pro_max_graphite_pdp_image_position-1a__wwen_5_1.jpg',
-            description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
-            price: 2300,
-            _id: '2',
-        },
-        {
-            model: 'Samsung Galaxy Z Fold 3',
-            imgUrl: 'https://images.samsung.com/is/image/samsung/p6pim/it/2108/gallery/it-galaxy-z-fold3-f926-5g-sm-f926bzgdeue-thumb-478053760',
-            description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
-            price: 2600,
-            _id: '3',
-        },
-        {
-            model: 'Samsung Galaxy Note 10 plus',
-            imgUrl: 'https://m.media-amazon.com/images/I/51RauKMrouL._AC_SX522_.jpg',
-            description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
-            price: 800,
-            _id: '4',
-        },
-        {
-            model: 'Apple iPhone 13 pro Max',
-            imgUrl: 'https://istyle.bg/media/catalog/product/i/p/iphone_13_pro_max_graphite_pdp_image_position-1a__wwen_5_1.jpg',
-            description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
-            price: 2300,
-            _id: '5',
-        },
-        {
-            model: 'Samsung Galaxy Z Fold 3',
-            imgUrl: 'https://images.samsung.com/is/image/samsung/p6pim/it/2108/gallery/it-galaxy-z-fold3-f926-5g-sm-f926bzgdeue-thumb-478053760',
-            description: 'This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.',
-            price: 2600,
-            _id: '6',
-        },
-    ];
+    const [phones, setPhones] = useState([]);
 
-    return (
-        <Row xs={1} md={2} className="g-4">
-            {phones.map((phone) => (
-                <Col key= {phone._id}>
-                    <Card.Link as={Link} to={`/details/${phone._id}`}>
-                        <div className='img'>
-                            <Card.Img variant="top" src={phone.imgUrl} />
-                        </div>
-                        <Card.Body>
-                            <Card.Title>{phone.model}</Card.Title>
-                            <Card.Text>Price: {phone.price}lv</Card.Text>
-                        </Card.Body>
-                    </Card.Link>
-                </Col>
-            ))}
-        </Row>
-    );
+    useEffect(() => {
+
+        phoneServices.getAll()
+            .then(res => res.json())
+            .then(data => {
+                setPhones(data)
+            })
+            .catch(err => console.log(err))
+    }, []);
+
+    if (phones.message) {
+        console.log(phones.message);
+        return (
+            <div className="page-title">No phones on list</div>
+        );
+    } else {
+
+        return (
+            <Row xs={1} md={2} className="g-4">
+                {phones.map((phone) => (
+                    <Col key={phone._id}>
+                        <Link to={`/details/${phone._id}`} className="phone-card">
+                            <Card>
+                                <div className='img'>
+                                    <Card.Img variant="top" src={phone.imgUrl} />
+                                </div>
+                                <Card.Body>
+                                    <Card.Title>{phone.model}</Card.Title>
+                                    <Card.Text>Price: {phone.price}lv</Card.Text>
+                                </Card.Body>
+                            </Card>
+                        </Link>
+                    </Col>
+                ))}
+            </Row>
+        );
+    }
 };
 
 export default AllPhones;
