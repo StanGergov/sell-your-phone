@@ -10,6 +10,7 @@ import Login from './components/LoginComponent/Login';
 import Register from './components/Register/Register';
 import Footer from './components/FooterComponent/Footer';
 import Create from './components/CreateComponent/Create';
+import Details from './components/DetailsComponent/Details';
 import Logout from './components/LogoutComponent/Logout';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             < Route path="/" element={<Home />} />
             < Route path="/allphones" element={<AllPhones />} />
             < Route path="/create" element={<Create />} />
+            < Route path="/details/:id" element={<Details />} />
             < Route path="/login" element={<Login />} />
             < Route path="/logout" element={<Logout />} />
             < Route path="/register" element={<Register />} />

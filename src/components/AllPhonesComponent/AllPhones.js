@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Row, Col, Card } from 'react-bootstrap';
 import './AllPhones.css';
 
@@ -52,7 +53,7 @@ const AllPhones = () => {
         <Row xs={1} md={2} className="g-4">
             {phones.map((phone) => (
                 <Col key= {phone._id}>
-                    <Card>
+                    <Card.Link as={Link} to={`/details/${phone._id}`}>
                         <div className='img'>
                             <Card.Img variant="top" src={phone.imgUrl} />
                         </div>
@@ -60,7 +61,7 @@ const AllPhones = () => {
                             <Card.Title>{phone.model}</Card.Title>
                             <Card.Text>Price: {phone.price}lv</Card.Text>
                         </Card.Body>
-                    </Card>
+                    </Card.Link>
                 </Col>
             ))}
         </Row>
