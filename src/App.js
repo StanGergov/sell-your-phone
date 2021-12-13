@@ -8,10 +8,11 @@ import Home from './components/HomeComponent/Home';
 import AllPhones from './components/AllPhonesComponent/AllPhones';
 import Login from './components/LoginComponent/Login';
 import Register from './components/Register/Register';
+import Logout from './components/LogoutComponent/Logout';
 import Footer from './components/FooterComponent/Footer';
 import Create from './components/CreateComponent/Create';
 import Details from './components/DetailsComponent/Details';
-import Logout from './components/LogoutComponent/Logout';
+import Edit from './components/EditComponent/Edit';
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
             < Route path="/" element={<Home />} />
             < Route path="/allphones" element={<AllPhones />} />
             < Route path="/create" element={<Create />} />
-            < Route path="/details/:id" element={<Details />} />
+            < Route path="/details/:phoneId" element={<Details />} />
+            < Route path="/edit/:phoneId" element={<Edit />} />
             < Route path="/login" element={<Login />} />
             < Route path="/logout" element={<Logout />} />
             < Route path="/register" element={<Register />} />
