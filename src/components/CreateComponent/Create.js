@@ -18,7 +18,13 @@ const Create = () => {
 
         const formDate = new FormData(e.target);
        
-        const phoneData = Object.fromEntries(formDate);
+        const phoneForm = Object.fromEntries(formDate);
+
+        const ownerName = user.name;
+        const ownerPhoneNumber = user.phoneNumber;
+        const ownerEmail = user.email;
+
+        const phoneData = {...phoneForm, ownerName, ownerPhoneNumber, ownerEmail }
 
         phoneServices.create(phoneData, user.accessToken)
             .then((res) => res.json())

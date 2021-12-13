@@ -12,11 +12,11 @@ export const login = (email, password) => {
         .catch(err => console.log(err));
 };
 
-export const register = (email, password) => {
+export const register = (email, password, name, phoneNumber) => {
     return fetch(`${baseUrl}/users/register`, {
         method: 'POST',
         'content-type': 'application/json',
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ email, password, name, phoneNumber }),
     })
         .then(res => res.json())
         .catch(err => console.log(err));
@@ -29,4 +29,14 @@ export const logout = (accessToken) => {
         }
     })
     .catch(err => console.log(err));
+};
+
+export const getUser = () => {
+    let userEmail = localStorage.getItem('email');
+
+    return userEmail;
+};
+
+export const isAuthenticated = () => {
+    return Boolean(getUser())
 };

@@ -6,11 +6,13 @@ import { Button } from 'react-bootstrap';
 import './Details.css';
 
 import * as phoneServices from '../../services/phoneService';
+import { useAuthContext } from '../../contexts/authContext';
 
 
 const Details = () => {
 
-    const {phoneId} = useParams()
+    const { user } = useAuthContext();
+    const { phoneId } = useParams();
 
     let [phone, setPhone] = useState([]);
 
@@ -21,6 +23,21 @@ const Details = () => {
                 setPhone(data);
             })
     }, [phoneId]);
+
+    let isOwner = phone._ownerId === user._id
+
+    const ownerButtons = <>
+        <Button as={Link} to={`/edit/${phoneId}`} variant="primary">Edit</Button>
+        <Button as={Link} to={`/delete/${phoneId}`} variant="danger">Delete</Button>
+    </>
+
+
+    const notOwnerView = <>
+        <h4>You like this phone?</h4>
+        <h5>Owner Contacts:</h5>
+        <h5>Name: {phone.ownerName}</h5>
+        <h5>Phone: {phone.ownerPhoneNumber}, email: {phone.ownerEmail}</h5>
+    </>
 
     return (
         <div>
@@ -53,9 +70,12 @@ const Details = () => {
                             : null
                     }
                     <div>
+                        {
+                            isOwner
+                            ? ownerButtons
+                            : notOwnerView
+                        }
 
-                        <Button as={Link} to={`/edit/${phoneId}`} variant="primary">Edit</Button>
-                        <Button as={Link} to={`/delete/${phoneId}`} variant="danger">Delete</Button>
                     </div>
                 </div>
             </div>

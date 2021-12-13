@@ -4,6 +4,8 @@ import useLocalStorage from '../hooks/useLocaleStorage';
 
 const initialAuthState = {
     _id: '',
+    name: '',
+    phoneNumber: '',
     email: '',
     accessToken: '',
 };
@@ -14,7 +16,8 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useLocalStorage('user', initialAuthState);
 
     const login = (authData) => {
-        setUser(authData);
+        const {_id, name, phoneNumber, email, accessToken} = authData;
+        setUser({_id, name, phoneNumber, email, accessToken});
     }
 
     const logout = () => {
@@ -22,7 +25,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     return (
-        <AuthContext.Provider value={{ user, login, logout }}>
+        <AuthContext.Provider value={{ user, login, logout, isAuthenticated: user.email }}>
             {children}
         </AuthContext.Provider>
     );

@@ -16,13 +16,13 @@ const Register = () => {
     const onRegister = (e) => {
         e.preventDefault();
 
-        let { email, password,rePassword } = Object.fromEntries(new FormData(e.currentTarget));
+        let { email, password, rePassword, name, phoneNumber } = Object.fromEntries(new FormData(e.currentTarget));
 
         if (password !== rePassword) {
             throw new Error('Passwords missmatch');
         }
 
-        authService.register(email, password)
+        authService.register(email, password, name, phoneNumber)
             .then(authData => {
                 login(authData);
 
@@ -38,16 +38,26 @@ const Register = () => {
             <Form className="register-form" onSubmit={onRegister}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" name="email" placeholder="Enter email" />
+                    <Form.Control type="email" name="email" placeholder="Enter email" required />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicName">
+                    <Form.Label>Name</Form.Label>
+                    <Form.Control type="text" name="name" placeholder="Enter your name" required />
+                </Form.Group>
+
+                <Form.Group className="mb-3" controlId="formBasicPhoneNumber">
+                    <Form.Label>Phone number</Form.Label>
+                    <Form.Control type="number" name="phoneNumber" placeholder="Enter phone number" required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name="password" placeholder="Password" />
+                    <Form.Control type="password" name="password" placeholder="Password" required />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className="mb-3" controlId="formBasicRePassword">
                     <Form.Label>Repeat password</Form.Label>
-                    <Form.Control type="password" name="rePassword" placeholder="Repat password" />
+                    <Form.Control type="password" name="rePassword" placeholder="Repat password" required />
                     <Form.Text>
                         You already have an account? <Link to="/login">Login from here</Link>
                     </Form.Text>

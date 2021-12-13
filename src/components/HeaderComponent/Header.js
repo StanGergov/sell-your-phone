@@ -22,8 +22,7 @@ const Header = () => {
             <Nav.Link as={Link} to="/login">Login</Nav.Link>
             <Nav.Link as={Link} to="register">Register</Nav.Link>
         </>
-    )
-
+    );
 
     return (
         <Navbar bg="light" expand="lg">
@@ -43,7 +42,7 @@ const Header = () => {
                     </Nav>
                     {
                         user.email
-                            ? <p className="hello-message">Hello, {user.email}</p>
+                            ? <p className="hello-message">Hello, {user.name === undefined ? user.email : user.name}</p>
                             : null
                     }
                 </Navbar.Collapse>
