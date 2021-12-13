@@ -13,6 +13,17 @@ export const create = (phoneData, token) => {
         },
         body: JSON.stringify({...phoneData})
     })
-}
+};
 
-export const getOne = (id) => fetch(`${baseUrl}/phone-collection/${id}`)
+export const getOne = (phoneId, signal) => fetch(`${baseUrl}/phone-collection/${phoneId}`, { signal });
+
+export const update = (phoneId, phoneData, token) => {
+    return fetch (`${baseUrl}/phone-collection/${phoneId}`, {
+        method: 'PUT',
+        headers: {
+            'Content-type': 'application/json',
+            'X-Authorization': token
+        },
+        body: JSON.stringify({...phoneData})
+    })
+}

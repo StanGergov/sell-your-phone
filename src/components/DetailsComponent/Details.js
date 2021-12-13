@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import { Button } from 'react-bootstrap';
+
 import './Details.css';
 
 import * as phoneServices from '../../services/phoneService';
@@ -9,17 +10,17 @@ import * as phoneServices from '../../services/phoneService';
 
 const Details = () => {
 
-    const { id } = useParams();
+    const {phoneId} = useParams()
 
     let [phone, setPhone] = useState([]);
 
     useEffect(() => {
-        phoneServices.getOne(id)
+        phoneServices.getOne(phoneId)
             .then(res => res.json())
             .then(data => {
                 setPhone(data);
             })
-    }, []);
+    }, [phoneId]);
 
     return (
         <div>
@@ -51,9 +52,11 @@ const Details = () => {
                                 <h5>{phone.notes}</h5></>
                             : null
                     }
+                    <div>
 
-                    <Button variant="primary">Edit</Button>
-                    <Button variant="danger">Delete</Button>
+                        <Button as={Link} to={`/edit/${phoneId}`} variant="primary">Edit</Button>
+                        <Button as={Link} to={`/delete/${phoneId}`} variant="danger">Delete</Button>
+                    </div>
                 </div>
             </div>
             {/* <table>
