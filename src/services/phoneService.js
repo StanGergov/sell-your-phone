@@ -26,4 +26,10 @@ export const update = (phoneId, phoneData, token) => {
         },
         body: JSON.stringify({...phoneData})
     })
+};
+
+export const getMyPhones = (userId) => {
+    let query = encodeURIComponent(`_ownerId="${userId}"`);
+
+    return fetch (`${baseUrl}/phone-collection?where=${query}`);
 }
