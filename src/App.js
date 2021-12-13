@@ -6,6 +6,7 @@ import { AuthProvider } from './contexts/authContext';
 import Header from "./components/HeaderComponent/Header";
 import Home from './components/HomeComponent/Home';
 import AllPhones from './components/AllPhonesComponent/AllPhones';
+import Myphones from './components/MyPhonesComponent/Myphones';
 import Login from './components/LoginComponent/Login';
 import Register from './components/Register/Register';
 import Logout from './components/LogoutComponent/Logout';
@@ -24,6 +25,7 @@ function App() {
 
             < Route path="/" element={<Home />} />
             < Route path="/allphones" element={<AllPhones />} />
+            < Route path="/myphones" element={<Myphones />} />
             < Route path="/create" element={<Create />} />
             < Route path="/details/:phoneId" element={<Details />} />
             < Route path="/edit/:phoneId" element={<Edit />} />
