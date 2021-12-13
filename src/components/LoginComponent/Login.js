@@ -3,12 +3,14 @@ import { Form, Button } from 'react-bootstrap';
 
 import './Login.css';
 
-import { useAuthContext } from '../../contexts/authContext'
+import { useNotificationContext, types } from '../../contexts/notificationContext';
+import { useAuthContext } from '../../contexts/authContext';
 import * as authService from '../../services/authService';
 
 const Login = () => {
 
     const { login } = useAuthContext();
+    const { addNotification } = useNotificationContext()
     const navigate = useNavigate();
 
     const onLogin = (e) => {
@@ -22,8 +24,8 @@ const Login = () => {
         authService.login(email, password)
             .then((authData) => {
                 login(authData);
-
-                navigate('/');
+                navigate('/allphones');
+                addNotification(`Welcome ${email}.`, types.success);
             })
             .catch(err => {
                 console.log(err);

@@ -24,7 +24,7 @@ const Create = () => {
         const ownerPhoneNumber = user.phoneNumber;
         const ownerEmail = user.email;
 
-        const phoneData = {...phoneForm, ownerName, ownerPhoneNumber, ownerEmail }
+        const phoneData = {...phoneForm, ownerName, ownerPhoneNumber, ownerEmail };
 
         phoneServices.create(phoneData, user.accessToken)
             .then((res) => res.json())
@@ -33,7 +33,7 @@ const Create = () => {
             })
             .catch(err => console.log(err))
 
-    }
+    };
 
 
     const [myValue, setMyValue] = useState('');

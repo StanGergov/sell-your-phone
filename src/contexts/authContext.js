@@ -10,7 +10,7 @@ const initialAuthState = {
     accessToken: '',
 };
 
-export const AuthContext = createContext();
+export const AuthContext = createContext(initialAuthState);
 
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useLocalStorage('user', initialAuthState);
