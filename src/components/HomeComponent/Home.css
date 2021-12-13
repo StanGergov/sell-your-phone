@@ -1,4 +1,5 @@
 .slide-title{
+   
     font-size: 50px;
     text-align: left;
 }
@@ -6,7 +7,7 @@
 .carousel-caption{
     position: absolute;
     right: 15%;
-    bottom: 1.25rem;
+    bottom: -1.25rem;
     left: 15%;
     padding-top: 1.25rem;
     padding-bottom: 18rem;

@@ -62,11 +62,11 @@ const Create = () => {
                 <Form.Label>Grade of conditions</Form.Label>
                 <Form.Select aria-label="Default select example" defaultValue={myValue || "default"} onChange={changeHandler} name="grade" required>
                     <option disabled={true} value="default" >Slect a value</option>
-                    <option value="1 Lots of scratches but still working">1: Lots of scratches but still working</option>
-                    <option value="2 Some scratches">2: Some scratches</option>
-                    <option value="3 Normal, with a few scratches">3: Normal, with a few scratches</option>
-                    <option value="4 Almost like new">4: Almost like new</option>
-                    <option value="5 New">5: New</option>
+                    <option value="1: Lots of scratches but still working">1: Lots of scratches but still working</option>
+                    <option value="2: Some scratches">2: Some scratches</option>
+                    <option value="3: Normal, with a few scratches">3: Normal, with a few scratches</option>
+                    <option value="4: Almost like new">4: Almost like new</option>
+                    <option value="5: New">5: New</option>
                 </Form.Select>
 
                 <Form.Group className="mb-3" >
