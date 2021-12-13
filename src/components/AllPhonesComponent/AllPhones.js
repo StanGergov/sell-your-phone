@@ -14,13 +14,15 @@ const AllPhones = () => {
         phoneServices.getAll()
             .then(res => res.json())
             .then(data => {
-                setPhones(data)
+                if(Array.isArray(data)){
+                    setPhones(data)
+                };
             })
             .catch(err => console.log(err))
     }, []);
 
     if (phones.message) {
-        console.log(phones.message);
+        console.err(phones.message);
         return (
             <div className="page-title">No phones on list</div>
         );

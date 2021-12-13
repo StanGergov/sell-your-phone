@@ -18,7 +18,9 @@ const Myphones = () => {
         phoneServices.getMyPhones(user._id)
             .then(res => res.json())
             .then(data => {
-                setPhones(data)
+                if(Array.isArray(data)){
+                    setPhones(data)
+                }
             })
             .catch(err => console.log(err))
     }, [user._id]);
