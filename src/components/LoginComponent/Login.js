@@ -10,7 +10,7 @@ import * as authService from '../../services/authService';
 const Login = () => {
 
     const { login } = useAuthContext();
-    const { addNotification } = useNotificationContext()
+    const { showNotification } = useNotificationContext();
     const navigate = useNavigate();
 
     const onLogin = (e) => {
@@ -24,8 +24,8 @@ const Login = () => {
         authService.login(email, password)
             .then((authData) => {
                 login(authData);
-                navigate('/allphones');
-                addNotification(`Welcome ${email}.`, types.success);
+                showNotification(`Welcome ${email}.`, types.success);
+                navigate('/');
             })
             .catch(err => {
                 console.log(err);

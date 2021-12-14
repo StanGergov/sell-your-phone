@@ -16,17 +16,17 @@ export const NotificationProvider = ({
 }) => {
     const [notification, setNotification] = useState(initialNotificationState);
 
-    const addNotification = useCallback((message, type = types.error) => {
+    const showNotification = useCallback((message, type = types.error) => {
         setNotification({ show: true, message, type });
         setTimeout(() => {
             setNotification(initialNotificationState);
         }, 5000);
     }, []);
 
-    const hideNotification = useCallback(() => setNotification(initialNotificationState), [initialNotificationState])
+    const hideNotification = useCallback(() => setNotification(initialNotificationState), [])
 
     return (
-        <NotificationContext.Provider value={{ notification, addNotification, hideNotification }}>
+        <NotificationContext.Provider value={{ notification, showNotification, hideNotification }}>
             {children}
         </NotificationContext.Provider>
     )

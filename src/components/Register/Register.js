@@ -5,12 +5,14 @@ import './Register.css';
 
 import * as authService from '../../services/authService';
 import { useAuthContext } from '../../contexts/authContext';
+import { useNotificationContext, types } from '../../contexts/notificationContext';
 
 
 const Register = () => {
 
     const { login } = useAuthContext();
-    const navigate = useNavigate()
+    const { showNotification } = useNotificationContext();
+    const navigate = useNavigate();
 
 
     const onRegister = (e) => {
@@ -25,7 +27,7 @@ const Register = () => {
         authService.register(email, password, name, phoneNumber)
             .then(authData => {
                 login(authData);
-
+                showNotification(`You have successfully registered`, types.success);
                 navigate('/allphones');
             })
             .catch(err => console.log(err))
