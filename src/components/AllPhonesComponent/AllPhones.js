@@ -38,7 +38,7 @@ const AllPhones = () => {
                                     <Card.Img variant="top" src={phone.imgUrl} />
                                 </div>
                                 <Card.Body>
-                                    <Card.Title>{phone.model}</Card.Title>
+                                    <Card.Title>{phone.brand} {phone.model}</Card.Title>
                                     <Card.Text>Price: {phone.price}lv</Card.Text>
                                 </Card.Body>
                             </Card>
