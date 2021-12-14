@@ -33,3 +33,12 @@ export const getMyPhones = (userId) => {
 
     return fetch (`${baseUrl}/phone-collection?where=${query}`);
 }
+
+export const deletePhone = (phoneId, accessToken) => {
+    return fetch(`${baseUrl}/phone-collection/${phoneId}`, {
+        method: 'DELETE',
+        headers: {
+            'X-Authorization': accessToken
+        }
+    }).then(res => res.json());
+}

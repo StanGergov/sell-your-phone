@@ -8,16 +8,16 @@ const ConfirmDialog = ({
     return (
         <Modal show={show} onHide={onClose}>
             <Modal.Header closeButton>
-                <Modal.Title>Modal title</Modal.Title>
+                <Modal.Title>Delete this phone?</Modal.Title>
             </Modal.Header>
 
             <Modal.Body>
-                <p>Modal body text goes here.</p>
+                <p>Are you sure you want to delete the ad for this phone?</p>
             </Modal.Body>
 
             <Modal.Footer>
                 <Button variant="secondary" onClick={onClose}>Close</Button>
-                <Button variant="primary" onClick={onSave}>Save changes</Button>
+                <Button variant="primary" onClick={onSave}>Delete</Button>
             </Modal.Footer>
         </Modal>
     );
