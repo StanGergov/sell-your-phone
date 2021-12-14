@@ -25,9 +25,17 @@ const Details = () => {
         phoneServices.getOne(phoneId)
             .then(res => res.json())
             .then(data => {
+                
+                if (data.message) {
+                    throw new Error ('This phone may not exist anymore.')
+                }
                 setPhone(data);
             })
-    }, [phoneId]);
+            .catch(err => {
+                showNotification('This phone may not exist anymore.', types.warn)
+                navigate('/allphones');
+            })
+    }, [phoneId, showNotification, navigate]);
 
     const deleteHandler = (e) => {
         e.preventDefault();
@@ -37,7 +45,7 @@ const Details = () => {
                 navigate('/myphones');
                 showNotification('You successfully delete this phone.', types.success);
             })
-            .finally(() =>{
+            .finally(() => {
                 setShowDeleteDialog(false)
             });
     };
