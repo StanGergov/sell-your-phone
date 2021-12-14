@@ -33,13 +33,13 @@ function App() {
               < Route path="/details/:phoneId" element={<Details />} />
               < Route path="/login" element={<Login />} />
               < Route path="/register" element={<Register />} />
+              < Route path="/logout" element={<Logout />} />
               < Route path="*" element={<PageNotFound />} />
 
               <Route element={<GuardRoute />}>
                 < Route path="/create" element={<Create />} />
                 < Route path="/myphones" element={<Myphones />} />
                 < Route path="/edit/:phoneId" element={<Edit />} />
-                < Route path="/logout" element={<Logout />} />
               </Route>
 
             </Routes>
