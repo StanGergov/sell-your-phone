@@ -7,6 +7,7 @@ import './Details.css';
 
 import ConfirmDialog from '../Common/ConfirmDialog/ConfirmDialog'
 import * as phoneServices from '../../services/phoneService';
+import * as authServices from '../../services/authService'
 import { useAuthContext } from '../../contexts/authContext';
 import { useNotificationContext, types } from '../../contexts/notificationContext';
 
@@ -21,13 +22,15 @@ const Details = () => {
     const [showDeleteDialog, setShowDeleteDialog] = useState(false);
     const [phone, setPhone] = useState([]);
 
+    const isOwner = authServices.isOwner(phoneId, user._id);
+
     useEffect(() => {
         phoneServices.getOne(phoneId)
             .then(res => res.json())
             .then(data => {
-                
+
                 if (data.message) {
-                    throw new Error ('This phone may not exist anymore.')
+                    throw new Error('This phone may not exist anymore.')
                 }
                 setPhone(data);
             })
@@ -45,6 +48,7 @@ const Details = () => {
                 navigate('/myphones');
                 showNotification('You successfully delete this phone.', types.success);
             })
+            .catch(err => console.error(err))
             .finally(() => {
                 setShowDeleteDialog(false)
             });
@@ -54,8 +58,6 @@ const Details = () => {
         e.preventDefault();
         setShowDeleteDialog(true);
     }
-
-    let isOwner = phone._ownerId === user._id;
 
     const ownerButtons = <>
         <Button as={Link} to={`/edit/${phoneId}`} variant="primary">Edit</Button>

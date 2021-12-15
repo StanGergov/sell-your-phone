@@ -30,3 +30,5 @@ export const logout = (accessToken) => {
     })
     .catch(err => console.log(err));
 };
+
+export const isOwner = (phoneId, userId) => phoneId === userId;
