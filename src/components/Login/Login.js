@@ -23,6 +23,12 @@ const Login = () => {
 
         authService.login(email, password)
             .then((authData) => {
+                if(authData.message){
+                    return (
+                        showNotification('Wrong email or password!', types.error)
+                    )
+                }
+
                 login(authData);
                 showNotification(`Welcome ${email}.`, types.success);
                 navigate('/');
@@ -39,12 +45,12 @@ const Login = () => {
             <Form className="login-form" onSubmit={onLogin}>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
-                    <Form.Control type="email" name="email" placeholder="Enter email" />
+                    <Form.Control type="email" name="email" placeholder="Enter email" required />
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" name="password" placeholder="Password" />
+                    <Form.Control type="password" name="password" placeholder="Password" required />
                     <Form.Text>
                         You don't have any account? <Link to="/register">Register from here</Link>
                     </Form.Text>
