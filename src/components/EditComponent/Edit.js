@@ -5,7 +5,9 @@ import { Form, Button } from 'react-bootstrap';
 import '../CreateComponent/Create.css'
 
 import * as phoneServices from '../../services/phoneService';
+import * as authServices from '../../services/authService'
 import { useAuthContext } from '../../contexts/authContext';
+import { useNotificationContext, types } from '../../contexts/notificationContext';
 import usePhoneState from '../../hooks/usePhoneState';
 
 
@@ -16,6 +18,13 @@ const Edit = () => {
     const { user } = useAuthContext();
     const navigate = useNavigate();
     const [phone, setPhone] = usePhoneState(phoneId);
+    const isOwner = authServices.isOwner(phoneId, user._id);
+    const { showNotification } = useNotificationContext();
+
+    if (!isOwner) {
+        showNotification('You are not the owner of this ad.', types.warn);
+        navigate('/allphones');
+    }
 
     const updateAd = (e) => {
         e.preventDefault();
@@ -64,11 +73,11 @@ const Edit = () => {
                 <Form.Label>Grade of conditions</Form.Label>
                 <Form.Select aria-label="Default select example" defaultValue={myValue || "default"} onChange={changeHandler} name="grade" required>
                     <option disabled={true} value="default" >Slect a value</option>
-                    <option defaultValue="1: Lots of scratches but still working" selected= {phone.grade===":1 Lots of scratches but still working"}>1: Lots of scratches but still working</option>
-                    <option defaultValue="2: Some scratches" selected= {phone.grade==="2: Some scratches"}>2: Some scratches</option>
-                    <option defaultValue="3: Normal, with a few scratches" selected= {phone.grade==="3: Normal, with a few scratches"}>3: Normal, with a few scratches</option>
-                    <option defaultValue="4: Almost like new" selected= {phone.grade==="4: Almost like new"}>4: Almost like new</option>
-                    <option defaultValue="5: New" selected= {phone.grade==="5: New"}>5: New</option>
+                    <option defaultValue="1: Lots of scratches but still working" selected={phone.grade === ":1 Lots of scratches but still working"}>1: Lots of scratches but still working</option>
+                    <option defaultValue="2: Some scratches" selected={phone.grade === "2: Some scratches"}>2: Some scratches</option>
+                    <option defaultValue="3: Normal, with a few scratches" selected={phone.grade === "3: Normal, with a few scratches"}>3: Normal, with a few scratches</option>
+                    <option defaultValue="4: Almost like new" selected={phone.grade === "4: Almost like new"}>4: Almost like new</option>
+                    <option defaultValue="5: New" selected={phone.grade === "5: New"}>5: New</option>
                 </Form.Select>
 
                 <Form.Group className="mb-3" >
