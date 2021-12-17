@@ -1,0 +1,25 @@
+.phone-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+    padding: 50px 40px 0 50px;
+}
+
+@media only screen and (max-width: 992px) {
+    .phone-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+    .phone-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .phone-list {
+        grid-template-columns: 1fr;
+    }
+}

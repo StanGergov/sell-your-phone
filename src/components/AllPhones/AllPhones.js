@@ -1,35 +1,31 @@
 import { useState, useEffect } from 'react';
-
 import './AllPhones.css';
-
-import PhoneCard from '../Common/PhoneCard/PhoneCard';
 import * as phoneServices from '../../services/phoneService';
+import PhoneList from '../Common/PhoneList/PhoneList';
+import NoPhonesMessage from '../Common/NoPhonesMessage/NoPhonesMessage';
 
 const AllPhones = () => {
 
     const [phones, setPhones] = useState([]);
 
     useEffect(() => {
-
         phoneServices.getAll()
             .then(res => res.json())
             .then(data => {
                 if(Array.isArray(data)){
                     setPhones(data)
-                };
+                }
             })
             .catch(err => console.log(err))
     }, []);
 
-    if (phones.message) {
-        console.err(phones.message);
+    if (phones.length === 0) {
         return (
-            <div className="page-title">No phones on list</div>
+            <NoPhonesMessage />
         );
     } else {
-
         return (
-            <PhoneCard phones={phones}/>
+            <PhoneList phones={phones}/>
         );
     }
 };
