@@ -1,0 +1,8 @@
+.no-phones-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.no-phones {
+    padding-top: 100px;
+}
