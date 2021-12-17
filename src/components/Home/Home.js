@@ -6,7 +6,6 @@ import './Home.css';
 import { useAuthContext } from '../../contexts/authContext';
 
 const Home = () => {
-
     let { user } = useAuthContext();
 
     let userScreen = (
@@ -22,6 +21,7 @@ const Home = () => {
             <Button as={Link} to="/login" variant="danger">Login</Button>
         </>
     )
+
 
     return (
         <Carousel>

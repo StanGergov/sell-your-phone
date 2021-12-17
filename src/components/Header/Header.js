@@ -33,7 +33,7 @@ const Header = () => {
                     <Nav className="me-auto">
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
                         <Nav.Link as={Link} to="/allphones">All phones</Nav.Link>
-                        <Nav.Link as={Link} to="howitworks">How it works</Nav.Link>
+                        {/*<Nav.Link as={Link} to="howitworks">How it works</Nav.Link>*/}
                         {
                             user.email
                                 ? userNav

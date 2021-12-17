@@ -7,10 +7,10 @@
 .carousel-caption{
     position: absolute;
     right: 15%;
-    bottom: -1.25rem;
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: unset;
     left: 15%;
-    padding-top: 1.25rem;
-    padding-bottom: 18rem;
     color: #fff;
     text-align: center;
     text-align: left;

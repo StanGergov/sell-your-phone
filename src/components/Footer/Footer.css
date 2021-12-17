@@ -1,7 +1,10 @@
 footer {
     background-color: #F3F3F3;
-    padding-top: 10px;
-    padding-bottom: 0px;
-    margin-top: 20px;
-    
+    padding: 0;
+    text-align: center;
+}
+
+footer p {
+    margin: 0;
+    padding: 10px 0;
 }

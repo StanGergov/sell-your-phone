@@ -18,12 +18,12 @@ const Details = () => {
     const { user } = useAuthContext();
     const { phoneId } = useParams();
     const { showNotification } = useNotificationContext();
-
-    const [showDeleteDialog, setShowDeleteDialog] = useState(false);
     const [phone, setPhone] = useState([]);
 
-    const isOwner = authServices.isOwner(phoneId, user._id);
+    const [showDeleteDialog, setShowDeleteDialog] = useState(false);
 
+    const isOwner = authServices.isOwner(phone._ownerId, user._id);
+    
     useEffect(() => {
         phoneServices.getOne(phoneId)
             .then(res => res.json())
@@ -35,6 +35,7 @@ const Details = () => {
                 setPhone(data);
             })
             .catch(err => {
+                console.error(err);
                 showNotification('This phone may not exist anymore.', types.warn)
                 navigate('/allphones');
             })
