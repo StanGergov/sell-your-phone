@@ -5,7 +5,7 @@ const PhoneList = ({ phones }) => {
     return (
         <div className='phone-list'>
             {phones.map((phone) => (
-                <PhoneCard phone={phone} />
+                <PhoneCard phone={phone} key={phone._id}/>
             ))}
         </div>
     )
