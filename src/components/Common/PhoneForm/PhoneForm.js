@@ -3,14 +3,25 @@ import { Form, Button } from 'react-bootstrap';
 
 // const IMAGE_URL_REGEX = '/(?:(?:https?:\\/\\/))[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,4}\\b(?:[-a-zA-Z0-9@:%_\\+.~#?&\\/=]*(\\.jpg|\\.png|\\.jpeg))/g';
 
-const PhoneForm = ({ submit, phone = {} }) => {
+const PhoneForm = ({
+    submit,
+    phone = {
+        brand: '',
+        model: '',
+        color: '',
+        imgUrl: '',
+        grade: '',
+        accessories: '',
+        notes: '',
+        price: '',
+    }
+}) => {
     const [formData, setFormData] = useState(() => {
         return { ...phone, grade: phone['grade'] ? phone['grade'] : 'default' }
     });
 
     function submitHandler(e) {
         e.preventDefault();
-        console.log(formData);
         submit(formData);
     }
 
@@ -23,7 +34,7 @@ const PhoneForm = ({ submit, phone = {} }) => {
         newFormData[target] = value;
         return setFormData(newFormData);
     };
-    
+
 
 
     return (
@@ -53,7 +64,7 @@ const PhoneForm = ({ submit, phone = {} }) => {
             </Form.Group>
             <Form.Group className="mb-3">
                 <Form.Label>Image</Form.Label>
-                <Form.Control type="text" name="imgUrl"  pattern='(?:(?:https?:\/\/))[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b(?:[-a-zA-Z0-9@:%_\+.~#?&\/=]*(\.jpg|\.png|\.jpeg))' placeholder="Image URL..." value={formData['imgUrl']} required
+                <Form.Control type="text" name="imgUrl" pattern='(?:(?:https?:\/\/))[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b(?:[-a-zA-Z0-9@:%_\+.~#?&\/=]*(\.jpg|\.png|\.jpeg))' placeholder="Image URL..." value={formData['imgUrl']} required
                     onChange={onChangeValidationHandler} />
             </Form.Group>
 
