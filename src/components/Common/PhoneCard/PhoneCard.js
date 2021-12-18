@@ -4,7 +4,7 @@ import './PhoneCard.css';
 
 const PhoneCard = ({phone}) => {
     return (
-        <Link to={`/details/${phone._id}`} className="phone-card" key={phone._id}>
+        <Link to={`/details/${phone._id}`} className="phone-card">
             <Card>
                 <div className="image-container">
                     <Card.Img variant="top" src={phone.imgUrl} />
