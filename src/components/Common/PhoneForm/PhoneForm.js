@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Form, Button } from 'react-bootstrap';
 
-// const IMAGE_URL_REGEX = '/(?:(?:https?:\\/\\/))[-a-zA-Z0-9@:%._\\+~#=]{2,256}\\.[a-z]{2,4}\\b(?:[-a-zA-Z0-9@:%_\\+.~#?&\\/=]*(\\.jpg|\\.png|\\.jpeg))/g';
+// const IMAGE_URL_REGEX = '(?:(?:https?:\/\/))[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b(?:[-a-zA-Z0-9@:%_\+.~#?&\/=]*(\.jpg|\.png|\.jpeg))';
 
 const PhoneForm = ({
     submit,
@@ -64,7 +64,7 @@ const PhoneForm = ({
             </Form.Group>
             <Form.Group className="mb-3">
                 <Form.Label>Image</Form.Label>
-                <Form.Control type="text" name="imgUrl" pattern='(?:(?:https?:\/\/))[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,4}\b(?:[-a-zA-Z0-9@:%_\+.~#?&\/=]*(\.jpg|\.png|\.jpeg))' placeholder="Image URL..." value={formData['imgUrl']} required
+                <Form.Control type="text" name="imgUrl" pattern="^https?:\/\/[\w?\W?]+$" placeholder="Image URL..." value={formData['imgUrl']} required
                     onChange={onChangeValidationHandler} />
             </Form.Group>
 

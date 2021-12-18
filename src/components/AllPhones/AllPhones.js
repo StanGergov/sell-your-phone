@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
+
 import './AllPhones.css';
+
 import * as phoneServices from '../../services/phoneService';
 import PhoneList from '../Common/PhoneList/PhoneList';
 import NoPhonesMessage from '../Common/NoPhonesMessage/NoPhonesMessage';
@@ -12,7 +14,7 @@ const AllPhones = () => {
         phoneServices.getAll()
             .then(res => res.json())
             .then(data => {
-                if(Array.isArray(data)){
+                if (Array.isArray(data)) {
                     setPhones(data)
                 }
             })
@@ -25,7 +27,7 @@ const AllPhones = () => {
         );
     } else {
         return (
-            <PhoneList phones={phones}/>
+            <PhoneList phones={phones} />
         );
     }
 };
