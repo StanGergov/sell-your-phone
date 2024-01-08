@@ -1,20 +1,20 @@
 import { Link } from 'react-router-dom';
-import { Card } from 'react-bootstrap';
 import './PhoneCard.css';
 
-const PhoneCard = ({phone}) => {
+const PhoneCard = ({ phone }) => {
     return (
-        <Link to={`/details/${phone._id}`} className="phone-card">
-            <Card>
-                <div className="image-container">
-                    <Card.Img variant="top" src={phone.imgUrl} />
-                </div>
-                <Card.Body>
-                    <Card.Title>{phone.brand} {phone.model}</Card.Title>
-                    <Card.Text>Price: {phone.price}lv</Card.Text>
-                </Card.Body>
-            </Card>
-        </Link >
+
+        <div className='phone-card' >
+            <Link to={`/details/${phone._id}`} className="card-content">
+
+                <img src={phone.imgUrl} />
+                <p>{phone.brand} {phone.model} <br></br>
+                    Price: {phone.price}lv</p>
+
+            </Link>
+        </div>
+
+
 
     )
 }

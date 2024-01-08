@@ -1,32 +1,50 @@
 .phone-card {
-    display: block;
-    text-decoration: none;
-    color: black;
-    border: transparent 2px;
-}
 
-.phone-card img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    max-width: 100%;
-    max-height: 100%;
-    width: auto;
-}
-
-.image-container {
-    position: relative;
-    height: 300px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    break-inside: avoid;
     width: 100%;
-}
+    text-align: center;
 
-.card {
-
-}
-
-.phone-card :hover{
-    border-color: lightcoral;
-    background-color: lightcoral;
     color: black;
+    /* border: solid 2px; */
+    margin-bottom: 15px;
+    border-radius: 5%;
+    background-color: white;
+
 }
+
+.phone-card:hover{
+    box-shadow: 10px 10px 5px gray;
+    border-style: gray;
+    border-radius: 5%;
+    color: black;
+
+    transform: scale(1.1);
+}
+
+
+.card-content {
+
+    text-decoration: none;
+    color: rgb(44, 44, 44);
+    grid-row: 2;
+    grid-column: 1;
+    background-color: rgba(255, 255, 255, .5);
+    padding: .2em .5em;
+    justify-self: start;
+    width: 100%;
+    border-radius: 5%;
+    color: black;
+
+}
+
+.card-content img {
+    margin: auto;
+    margin-bottom: 10px;
+    break-inside: avoid;
+    max-width: 100%;
+    align-items: center;
+}
+
+

@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -16,6 +17,7 @@ code {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: rgb(240, 240, 240);
 }
 
 .App .site-content {

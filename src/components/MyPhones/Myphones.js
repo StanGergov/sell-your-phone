@@ -8,18 +8,27 @@ import * as phoneServices from '../../services/phoneService';
 import { useAuthContext } from '../../contexts/authContext';
 import PhoneList from '../Common/PhoneList/PhoneList';
 import NoPhonesMessage from '../Common/NoPhonesMessage/NoPhonesMessage';
+import Loadig from '../Common/Loading/Loading';
 
 
 
 const Myphones = () => {
-    const {user} = useAuthContext();
+    const { user } = useAuthContext();
     const [phones, setPhones] = useState([]);
+    const [loading, setLoading] = useState(false);
+
+    useEffect(() => {
+        setLoading(true);
+        setTimeout(() => {
+            setLoading(false);
+        }, 1000);
+    }, []);
 
     useEffect(() => {
         phoneServices.getMyPhones(user._id)
             .then(res => res.json())
             .then(data => {
-                if(Array.isArray(data)){
+                if (Array.isArray(data)) {
                     setPhones(data)
                 }
             })
@@ -28,13 +37,15 @@ const Myphones = () => {
 
     if (phones.length <= 0) {
         return (
-            <NoPhonesMessage>
-                <Button as={Link} to="/create" className="create-btn" variant="primary">Create an ad</Button>
-            </NoPhonesMessage>
+            loading
+                ? <Loadig />
+                : <NoPhonesMessage>
+                    <Button as={Link} to="/create" className="create-btn" variant="primary">Create an ad</Button>
+                </NoPhonesMessage>
         );
     } else {
         return (
-            <PhoneList phones={phones}/>
+            <PhoneList phones={phones} />
         );
     }
 };
