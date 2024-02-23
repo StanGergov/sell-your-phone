@@ -11,7 +11,7 @@ const Header = () => {
 
     let userNav = (
         <>
-            <Nav.Link as={Link} to="/myphones">My phones</Nav.Link>
+            <Nav.Link as={Link} to="/my-phones">My phones</Nav.Link>
             <Nav.Link as={Link} to="/create">Create ad</Nav.Link>
             <Nav.Link as={Link} to="/logout">Logout</Nav.Link>
         </>
@@ -24,22 +24,30 @@ const Header = () => {
         </>
     );
 
+    console.log(user);
+
     return (
         <Navbar bg="light" expand="lg">
             <Container>
-                <Navbar.Brand as={Link} to="/" className="site-logo">Sell your phone</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/all-phones" className="site-logo">Sell your phone</Navbar.Brand>
                 {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link as={Link} to="/">Home</Nav.Link>
-                        <Nav.Link as={Link} to="/allphones">All phones</Nav.Link>
+                        <Nav.Link as={Link} to="/all-phones">All phones</Nav.Link>
                         {/*<Nav.Link as={Link} to="howitworks">How it works</Nav.Link>*/}
                         {
                             user.email
                                 ? userNav
                                 : guestNav
                         }
+
+                        {/* <div className='search-bar'>
+                            
+                            <button id='search-button'><img src='../../../magnifying-glass-solid.svg'/>Search</button>
+                            <input id='search-text' />
+                        </div> */}
                     </Nav>
+
                     {
                         user.email
                             ? <p className="hello-message">Hello, {user.name === undefined ? user.email : user.name}</p>
