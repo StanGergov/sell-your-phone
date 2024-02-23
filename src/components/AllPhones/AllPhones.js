@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 
-import './AllPhones.css';
-
 import * as phoneServices from '../../services/phoneService';
 import PhoneList from '../Common/PhoneList/PhoneList';
 import NoPhonesMessage from '../Common/NoPhonesMessage/NoPhonesMessage';
