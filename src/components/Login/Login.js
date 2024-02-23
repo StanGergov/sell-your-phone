@@ -31,7 +31,7 @@ const Login = () => {
 
                 login(authData);
                 showNotification(`Welcome ${email}.`, types.success);
-                navigate('/');
+                navigate('/my-phones');
             })
             .catch(err => {
                 console.error(err);

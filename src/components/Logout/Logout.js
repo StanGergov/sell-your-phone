@@ -14,7 +14,7 @@ const Logout = () => {
         .then(() => {
             logout();
 
-            navigate('/');
+            navigate('/all-phones');
         })
     })
 

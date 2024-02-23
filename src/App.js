@@ -6,7 +6,6 @@ import { AuthProvider } from './contexts/authContext';
 import { NotificationProvider } from './contexts/notificationContext';
 import Notification from './components/Common/Notification/Notification'
 import Header from "./components/Header/Header";
-import Home from './components/Home/Home';
 import AllPhones from './components/AllPhones/AllPhones';
 import Myphones from './components/MyPhones/Myphones';
 import Login from './components/Login/Login';
@@ -28,8 +27,7 @@ function App() {
           <main className="site-content">
             <Notification />
             <Routes>
-              < Route path="/" element={<Home />} />
-              < Route path="/allphones" element={<AllPhones />} />
+              < Route path="/all-phones" element={<AllPhones />} />
               < Route path="/details/:phoneId" element={<Details />} />
               < Route path="/login" element={<Login />} />
               < Route path="/register" element={<Register />} />
@@ -38,7 +36,7 @@ function App() {
 
               <Route element={<GuardRoute />}>
                 < Route path="/create" element={<Create />} />
-                < Route path="/myphones" element={<Myphones />} />
+                < Route path="/my-phones" element={<Myphones />} />
                 < Route path="/edit/:phoneId" element={<Edit />} />
               </Route>
 
