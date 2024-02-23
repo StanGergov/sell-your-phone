@@ -23,7 +23,7 @@ const Details = () => {
     const [showDeleteDialog, setShowDeleteDialog] = useState(false);
 
     const isOwner = authServices.isOwner(phone._ownerId, user._id);
-    
+
     useEffect(() => {
         phoneServices.getOne(phoneId)
             .then(res => res.json())
@@ -77,21 +77,19 @@ const Details = () => {
         <>
             <ConfirmDialog show={showDeleteDialog} onClose={() => setShowDeleteDialog(false)} onSave={deleteHandler} />
             <div>
-                <div className="page-title">{phone.brand} {phone.model}</div>
                 <div className="page-content">
                     <img src={phone.imgUrl} className="image" alt="img" />
                     <div className="phone-details">
+                        <div className="page-title">{phone.brand} {phone.model}</div>
 
-                        <h3>Price:</h3>
-                        <h2>{phone.price} lv</h2>
+                        <h3>Price: {phone.price} leva</h3>
 
-                        <h4>Color</h4>
-                        <h5>{phone.color}</h5>
+                        <h4>Color: {phone.color}</h4>
 
-                        <h4>Grade of conditions</h4>
-                        <h5>{phone.grade}</h5>
+                        <h4>Grade of conditions: {phone.grade}</h4>
 
-                        <h4>Accessories</h4>
+                        <h4>Accessories:</h4>
+
                         {
                             phone.accessories
                                 ? <h5>{phone.accessories}</h5>
@@ -105,7 +103,7 @@ const Details = () => {
                                     <h5>{phone.notes}</h5></>
                                 : null
                         }
-                        <div>
+                        <div className='owner-buttons'>
                             {
                                 isOwner
                                     ? ownerButtons
