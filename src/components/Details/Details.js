@@ -80,7 +80,7 @@ const Details = () => {
                 <div className="page-content">
                     <img src={phone.imgUrl} className="image" alt="img" />
                     <div className="phone-details">
-                        <div className="page-title">{phone.brand} {phone.model}</div>
+                        <div className="phone-model">{phone.brand} {phone.model}</div>
 
                         <h3>Price: {phone.price} leva</h3>
 
