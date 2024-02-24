@@ -8,11 +8,14 @@ import PhoneList from '../Common/PhoneList/PhoneList';
 import NoPhonesMessage from '../Common/NoPhonesMessage/NoPhonesMessage';
 import Loadig from '../Common/Loading/Loading';
 
-
+import demoPhones from '../Common/demoPhones';
 
 const Myphones = () => {
+
     const { user } = useAuthContext();
-    const [phones, setPhones] = useState([]);
+    let myDemoPhones = demoPhones.filter(x => x._ownerId === user._id);
+
+    const [phones, setPhones] = useState(myDemoPhones);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -24,13 +27,14 @@ const Myphones = () => {
 
     useEffect(() => {
         phoneServices.getMyPhones(user._id)
-            .then(res => res.json())
-            .then(data => {
+        .then(res => res.json())
+        .then(data => {
                 if (Array.isArray(data)) {
-                    setPhones(data)
+                    setPhones([...phones, ...data]);
                 }
             })
-            .catch(err => console.log(err))
+            .catch(err => console.log(err));
+    
     }, [user._id]);
 
     if (phones.length <= 0) {
