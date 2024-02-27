@@ -28,6 +28,7 @@ function App() {
             <Notification />
             <Routes>
               < Route path="/all-phones" element={<AllPhones />} />
+              < Route path="/" element={<AllPhones />} />
               < Route path="/details/:phoneId" element={<Details />} />
               < Route path="/login" element={<Login />} />
               < Route path="/register" element={<Register />} />
