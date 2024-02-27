@@ -34,7 +34,7 @@ const Register = () => {
             .then(authData => {
                 login(authData);
                 showNotification(`You have successfully registered`, types.success);
-                navigate('/allphones');
+                navigate('/all-phones');
             })
             .catch(err => console.error(err))
     };
