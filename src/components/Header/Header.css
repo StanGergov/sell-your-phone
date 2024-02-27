@@ -73,6 +73,9 @@
     .navbar {
         width: 100%;
     }
+    .navbar-light .navbar-brand,.logo {
+        font-size: 25px;
+    }
 
     /* .container {
         flex-wrap: nowrap;
@@ -138,4 +141,11 @@
         background-color: lightgrey;
     }
   
+}
+
+@media only screen and (max-width: 300px) {
+
+    .navbar-light .navbar-brand,.logo {
+        font-size: 20px;
+    }
 }

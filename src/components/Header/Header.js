@@ -81,7 +81,7 @@ const Header = () => {
     return (
         <Navbar bg="light" expand="lg">
             <Container>
-                <Navbar.Brand as={Link} to="/all-phones" className="site-logo">Sell your phone</Navbar.Brand>
+                <Navbar.Brand as={Link} to="/all-phones" className="logo">Sell your phone</Navbar.Brand>
 
 
                 {windowWidth > maxWidth ? desktopNavbar : mobileNavbar}
