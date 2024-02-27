@@ -19,10 +19,12 @@ code {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background-color: rgb(240, 240, 240);
-  
+  background-color: rgb(240, 240, 240);  
 }
 
 .App .site-content {
   flex-grow: 1;
+}
+.site-content{
+  margin-top: 90px;
 }

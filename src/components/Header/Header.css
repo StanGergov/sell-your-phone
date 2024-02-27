@@ -4,17 +4,28 @@
     font-style: italic;
     margin-top: 23px;
 }
-
-.site-logo {
-    margin-right: 0;
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 10000;
+}
+.navbar>.container {
+    gap: 25px;
 }
 
-.navbar-light .navbar-brand {
+.header-buttons{
+    color: rgba(0,0,0,.55);
+    font-family: var(--bs-body-font-family);
+}
+
+.navbar-light .navbar-brand,
+.logo {
     font-family: URW Chancery L, cursive;
     font-style: italic;
     font-weight: bold;
     font-size: 30px;
     color: rgb(212, 7, 7);
+    margin-right: 0;
 }
 
 #basic-navbar-nav {
@@ -58,7 +69,8 @@
     .hello-message {
         display: none;
     }
-    .navbar{
+
+    .navbar {
         width: 100%;
     }
 
@@ -80,11 +92,13 @@
     .navbar>.container {
         flex-wrap: nowrap;
         min-width: fit-content;
-        justify-content: flex-start;
+    
         margin: 10px;
         flex-wrap: nowrap;
-        width: auto;
+        
         gap: 15px;
+        justify-content: space-between;
+        width: 100%;
 
     }
 
@@ -92,47 +106,36 @@
         gap: 15px;
     }
 
-    
-
-    /* .basic-navbar-nav {
-        width: fit-content;
-        max-width: 100%;
-    } */
-
     .header-buttons {
         gap: 10px;
     }
 }
 
 @media only screen and (max-width: 602px) {
-    .collapse:not(.show) {
-        display: block;
+    .navbar>.container{
+        justify-content: space-between;
+        width: 100%;
     }
 
-
-    .navbar {
-        position: fixed;
+    #dropdown-basic{
+        background-color: rgb(212, 7, 7);
+        border-radius: 15px;
+        
     }
-
-    .navbar>.container {
-        flex-wrap: wrap;
-        width: auto;
-        margin: 0;
-        gap: 0px;
-
+    #root > div > nav > div > div > div{
+        right: 0;
+        left: auto;
+        border-radius: 15px;
     }
 
     .header-buttons {
-        justify-content: space-between;
-        margin-left: 0px;
+        flex-direction: column;
     }
 
-    .site-content {
-        margin-top: 110px;
+    .header-buttons :hover{
+        padding: 5px 15px;
+        border-radius: 15px;
+        background-color: lightgrey;
     }
-    
-    .navbar-light .navbar-brand{
-        font-size: 25px;
-    }
-
+  
 }
