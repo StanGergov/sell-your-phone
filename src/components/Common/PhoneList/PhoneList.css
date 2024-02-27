@@ -9,7 +9,7 @@
 @media only screen and (max-width: 992px) {
     .phone-list {
         column-count: 5;
-        padding: 0;
+        padding: 10px;
     }
 
 }
