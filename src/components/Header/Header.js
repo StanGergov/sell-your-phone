@@ -24,17 +24,16 @@ const Header = () => {
         </>
     );
 
-    console.log(user);
 
     return (
         <Navbar bg="light" expand="lg">
             <Container>
                 <Navbar.Brand as={Link} to="/all-phones" className="site-logo">Sell your phone</Navbar.Brand>
-                {/* <Navbar.Toggle aria-controls="basic-navbar-nav" /> */}
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className="me-auto">
+
+                <Navbar.Collapse id="basic-navbar-nav" >
+
+                    <Nav className="header-buttons">
                         <Nav.Link as={Link} to="/all-phones">All phones</Nav.Link>
-                        {/*<Nav.Link as={Link} to="howitworks">How it works</Nav.Link>*/}
                         {
                             user.email
                                 ? userNav

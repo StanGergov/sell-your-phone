@@ -5,20 +5,27 @@
     margin-top: 23px;
 }
 
+.site-logo {
+    margin-right: 0;
+}
+
 .navbar-light .navbar-brand {
     font-family: URW Chancery L, cursive;
     font-style: italic;
     font-weight: bold;
     font-size: 30px;
-    margin-right: 10px;
     color: rgb(212, 7, 7);
+}
+
+#basic-navbar-nav {
+    justify-content: space-between;
 }
 
 .navbar-expand-lg .navbar-nav {
     margin-top: 6px;
 }
 
-.me-auto {
+.header-buttons {
     align-items: center;
 }
 
@@ -45,4 +52,87 @@
     margin: 0px;
     align-items: center;
     text-align: center;
+}
+
+@media only screen and (max-width: 992px) {
+    .hello-message {
+        display: none;
+    }
+    .navbar{
+        width: 100%;
+    }
+
+    /* .container {
+        flex-wrap: nowrap;
+        min-width: fit-content;
+        justify-content: flex-start;
+        margin: 10px;
+    } */
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    .collapse:not(.show) {
+        display: block;
+    }
+
+    .navbar>.container {
+        flex-wrap: nowrap;
+        min-width: fit-content;
+        justify-content: flex-start;
+        margin: 10px;
+        flex-wrap: nowrap;
+        width: auto;
+        gap: 15px;
+
+    }
+
+    .me-auto {
+        gap: 15px;
+    }
+
+    
+
+    /* .basic-navbar-nav {
+        width: fit-content;
+        max-width: 100%;
+    } */
+
+    .header-buttons {
+        gap: 10px;
+    }
+}
+
+@media only screen and (max-width: 602px) {
+    .collapse:not(.show) {
+        display: block;
+    }
+
+
+    .navbar {
+        position: fixed;
+    }
+
+    .navbar>.container {
+        flex-wrap: wrap;
+        width: auto;
+        margin: 0;
+        gap: 0px;
+
+    }
+
+    .header-buttons {
+        justify-content: space-between;
+        margin-left: 0px;
+    }
+
+    .site-content {
+        margin-top: 110px;
+    }
+    
+    .navbar-light .navbar-brand{
+        font-size: 25px;
+    }
+
 }
