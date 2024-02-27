@@ -11,6 +11,7 @@ import * as authServices from '../../services/authService'
 import { useAuthContext } from '../../contexts/authContext';
 import { useNotificationContext, types } from '../../contexts/notificationContext';
 
+import demoPhones from '../Common/demoPhones';
 
 const Details = () => {
 
@@ -30,14 +31,21 @@ const Details = () => {
             .then(data => {
 
                 if (data.message) {
-                    throw new Error('This phone may not exist anymore.')
+                    let searchPhone = demoPhones.filter(x => x._id === phoneId)
+                    if (searchPhone) {
+                        setPhone(searchPhone[0]);
+                    } else {
+                        throw new Error('This phone may not exist anymore.')
+                    }
+                } else {
+
+                    setPhone(data);
                 }
-                setPhone(data);
             })
             .catch(err => {
                 console.error(err);
                 showNotification('This phone may not exist anymore.', types.warn)
-                navigate('/allphones');
+                navigate('/all-phones');
             })
     }, [phoneId, showNotification, navigate]);
 
