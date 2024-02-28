@@ -114,7 +114,7 @@
     }
 }
 
-@media only screen and (max-width: 602px) {
+@media only screen and (max-width: 603px) {
     .navbar>.container{
         justify-content: space-between;
         width: 100%;

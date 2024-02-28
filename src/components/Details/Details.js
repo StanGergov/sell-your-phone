@@ -25,7 +25,6 @@ const Details = () => {
 
     const isOwner = authServices.isOwner(phone._ownerId, user._id);
 
-    console.log(isOwner);
     useEffect(() => {
         phoneServices.getOne(phoneId)
             .then(res => res.json())
@@ -93,9 +92,9 @@ const Details = () => {
 
                         <h3>Price: {phone.price} leva</h3>
 
-                        <h4>Color: {phone.color}</h4>
+                        <h4>Color: <h5>{phone.color}</h5></h4>
 
-                        <h4>Grade of conditions: {phone.grade}</h4>
+                        <h4>Grade of conditions: <h5>{phone.grade}</h5></h4>
 
                         <h4>Accessories:</h4>
 
@@ -108,7 +107,7 @@ const Details = () => {
 
                         {
                             phone.notes
-                                ? <> <h4>Notes</h4>
+                                ? <> <h4>Notes:</h4>
                                     <h5>{phone.notes}</h5></>
                                 : null
                         }
