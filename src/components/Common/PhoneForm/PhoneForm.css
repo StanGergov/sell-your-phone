@@ -1,0 +1,43 @@
+
+.ad-form {
+    padding-bottom: 5rem;
+    text-align: center;
+    margin-left: 35%;
+    margin-right: 35%;
+    
+}
+@media only screen and (max-width: 992px) {
+    .page-title{
+        font-size: 2rem;
+    }
+
+    .ad-form {
+        margin-left: 20%;
+        margin-right: 20%;
+        
+    }
+}
+
+@media only screen and (max-width: 602px){
+    .page-title{
+        font-size: 1.7rem;
+    }
+
+    .ad-form {
+        margin-left: 15%;
+        margin-right: 15%;
+        
+    }
+}
+
+@media only screen and (max-width: 300px){
+    .page-title{
+        font-size: 1.5rem;
+    }
+
+    .ad-form {
+        margin-left: 5%;
+        margin-right: 5%;
+        
+    }
+}

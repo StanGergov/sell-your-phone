@@ -25,6 +25,7 @@ const Details = () => {
 
     const isOwner = authServices.isOwner(phone._ownerId, user._id);
 
+    console.log(isOwner);
     useEffect(() => {
         phoneServices.getOne(phoneId)
             .then(res => res.json())

@@ -36,7 +36,7 @@ const Edit = () => {
 
     if (!isOwner) {
         showNotification('You are not the owner of this ad.', types.warn);
-        navigate('/allphones');
+        navigate('/all-phones');
     }
 
     return (
