@@ -69,8 +69,8 @@ const Details = () => {
     }
 
     const ownerButtons = <>
-        <Button as={Link} to={`/edit/${phoneId}`} variant="primary">Edit</Button>
-        <Button onClick={deleteClickHandler} variant="danger">Delete</Button>
+        <Button as={Link} to={`/edit/${phoneId}`} variant="primary" className='edit-btn'>Edit</Button>
+        <Button onClick={deleteClickHandler} variant="danger" className='delete-btn'>Delete</Button>
     </>
 
 

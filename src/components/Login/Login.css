@@ -14,6 +14,10 @@
     padding-top: 40px;
     font-family: cursive;
 }
+.login-form button {
+    background-color: rgb(212, 7, 7);
+    border-radius: 15px;
+}
 
 @media only screen and (max-width: 992px) {
     .page-title{
