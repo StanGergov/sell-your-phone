@@ -1,19 +1,20 @@
 
 .ad-form {
-    padding-bottom: 5rem;
+    padding-top: 20px;
     text-align: center;
     margin-left: 35%;
     margin-right: 35%;
-    
 }
+
+
 @media only screen and (max-width: 992px) {
     .page-title{
         font-size: 2rem;
     }
 
     .ad-form {
-        margin-left: 20%;
-        margin-right: 20%;
+        margin-left: 30%;
+        margin-right: 30%;
         
     }
 }
