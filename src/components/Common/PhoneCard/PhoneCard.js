@@ -9,7 +9,7 @@ const PhoneCard = ({ phone }) => {
 
                 <img src={phone.imgUrl} alt={phone.brand}/>
                 <p>{phone.brand} {phone.model} <br></br>
-                    Price: {phone.price}lv</p>
+                    Price: {phone.price} lv</p>
 
             </Link>
         </div>

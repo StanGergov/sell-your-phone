@@ -5,28 +5,27 @@
     break-inside: avoid;
     width: 100%;
     text-align: center;
-
-    color: black;
     margin-bottom: 15px;
     border-radius: 5%;
     background-color: white;
 
 }
 
-.phone-card:hover{
+.phone-card:hover {
     box-shadow: 10px 10px 5px gray;
     border-style: gray;
     border-radius: 5%;
     color: black;
-
+    
     transform: scale(1.1);
 }
+
 
 
 .card-content {
 
     text-decoration: none;
-    color: rgb(44, 44, 44);
+    color: rgb(0, 0, 0, .55);
     grid-row: 2;
     grid-column: 1;
     background-color: rgba(255, 255, 255, .5);
@@ -37,6 +36,7 @@
 
 }
 
+
 .card-content img {
     margin: auto;
     margin-bottom: 10px;
@@ -45,4 +45,15 @@
     align-items: center;
 }
 
+.card-content img :hover{
+    color: black;
+}
 
+.card-content :hover {
+    text-transform: none;
+    color: black;
+}
+.phone-card p :hover {
+    color: black;
+
+}
