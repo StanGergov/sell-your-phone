@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/sell-your-phone/static/css/main.1cde1ec0.css",
-    "main.js": "/sell-your-phone/static/js/main.670cd550.js",
-    "static/js/453.aee30cc2.chunk.js": "/sell-your-phone/static/js/453.aee30cc2.chunk.js",
-    "index.html": "/sell-your-phone/index.html",
-    "main.1cde1ec0.css.map": "/sell-your-phone/static/css/main.1cde1ec0.css.map",
-    "main.670cd550.js.map": "/sell-your-phone/static/js/main.670cd550.js.map",
-    "453.aee30cc2.chunk.js.map": "/sell-your-phone/static/js/453.aee30cc2.chunk.js.map"
+    "main.css": "/static/css/main.ff81d23e.css",
+    "main.js": "/static/js/main.d5a5db80.js",
+    "static/js/453.aee30cc2.chunk.js": "/static/js/453.aee30cc2.chunk.js",
+    "index.html": "/index.html",
+    "main.ff81d23e.css.map": "/static/css/main.ff81d23e.css.map",
+    "main.d5a5db80.js.map": "/static/js/main.d5a5db80.js.map",
+    "453.aee30cc2.chunk.js.map": "/static/js/453.aee30cc2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1cde1ec0.css",
-    "static/js/main.670cd550.js"
+    "static/css/main.ff81d23e.css",
+    "static/js/main.d5a5db80.js"
   ]
 }
