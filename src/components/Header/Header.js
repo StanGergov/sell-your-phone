@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Navbar, Nav, Container, Dropdown } from 'react-bootstrap';
+import { useEffect, useState } from 'react';
 
 import './Header.css'
 
@@ -9,8 +10,7 @@ const Header = () => {
 
     let { user } = useAuthContext();
 
-    const windowWidth = window.innerWidth;
-    const maxWidth = 602;
+    let [navbar, setNavbar] = useState('');
 
     const userNav = (
         <>
@@ -78,13 +78,28 @@ const Header = () => {
         </>
     );
 
+    const maxWidth = 602;
+    let windowWidth = window.innerWidth;
+
+    let neededNavbar = windowWidth > maxWidth ? desktopNavbar : mobileNavbar;
+
+
+    useEffect(() => {
+        return window.addEventListener('resize', () => {
+            windowWidth = window.innerWidth;
+            return setNavbar(windowWidth > maxWidth ? desktopNavbar : mobileNavbar);
+        });
+    }, [])
+
+
+
     return (
         <Navbar bg="light" expand="lg">
             <Container>
                 <Navbar.Brand as={Link} to="/all-phones" className="logo">Sell your phone</Navbar.Brand>
 
 
-                {windowWidth > maxWidth ? desktopNavbar : mobileNavbar}
+                {navbar ? navbar : neededNavbar}
 
             </Container>
         </Navbar>
