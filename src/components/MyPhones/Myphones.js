@@ -8,6 +8,7 @@ import PhoneList from '../Common/PhoneList/PhoneList';
 import NoPhonesMessage from '../Common/NoPhonesMessage/NoPhonesMessage';
 import Loadig from '../Common/Loading/Loading';
 
+import '../MyPhones/MyPhones.css'
 import demoPhones from '../Common/demoPhones';
 
 const Myphones = () => {
