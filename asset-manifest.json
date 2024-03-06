@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/sell-your-phone/static/css/main.ff81d23e.css",
-    "main.js": "/sell-your-phone/static/js/main.08c11ca7.js",
+    "main.css": "/sell-your-phone/static/css/main.c7680fd4.css",
+    "main.js": "/sell-your-phone/static/js/main.5ba93641.js",
     "static/js/453.aee30cc2.chunk.js": "/sell-your-phone/static/js/453.aee30cc2.chunk.js",
     "index.html": "/sell-your-phone/index.html",
-    "main.ff81d23e.css.map": "/sell-your-phone/static/css/main.ff81d23e.css.map",
-    "main.08c11ca7.js.map": "/sell-your-phone/static/js/main.08c11ca7.js.map",
+    "main.c7680fd4.css.map": "/sell-your-phone/static/css/main.c7680fd4.css.map",
+    "main.5ba93641.js.map": "/sell-your-phone/static/js/main.5ba93641.js.map",
     "453.aee30cc2.chunk.js.map": "/sell-your-phone/static/js/453.aee30cc2.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ff81d23e.css",
-    "static/js/main.08c11ca7.js"
+    "static/css/main.c7680fd4.css",
+    "static/js/main.5ba93641.js"
   ]
 }
