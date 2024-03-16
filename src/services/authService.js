@@ -18,7 +18,7 @@ export const login = (email, password) => {
 
     return signInWithEmailAndPassword(auth, email, password)
         .then((res) => res)
-        .catch(err => err)
+        .catch(err => console.log(err))
 };
 
 export const register = (email, password) => {
