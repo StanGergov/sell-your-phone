@@ -7,15 +7,14 @@ import * as authServices from '../../services/authService';
 const Logout = () => {
 
     const navigate = useNavigate();
-    const {user, logout} = useAuthContext();
+    const { logout } = useAuthContext();
 
     useEffect(() => {
-        authServices.logout(user.accessToken)
-        .then(() => {
-            logout();
+        authServices.logout();
 
-            navigate('/all-phones');
-        })
+        logout();
+
+        navigate('/all-phones');
     })
 
     return null

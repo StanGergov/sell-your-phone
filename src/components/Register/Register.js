@@ -8,6 +8,7 @@ import * as authService from '../../services/authService';
 import { useAuthContext } from '../../contexts/authContext';
 import { useNotificationContext, types } from '../../contexts/notificationContext';
 
+
 const Register = () => {
 
     const { login } = useAuthContext();
@@ -23,7 +24,7 @@ const Register = () => {
     const onRegister = (e) => {
         e.preventDefault();
 
-        const { rePassword } = Object.fromEntries(new FormData(e.currentTarget));
+        const { email, rePassword } = Object.fromEntries(new FormData(e.currentTarget));
 
         if (password !== rePassword) {
             showNotification('Passwords missmatch', types.error);
@@ -32,11 +33,25 @@ const Register = () => {
 
         authService.register(email, password, name, phoneNumber)
             .then(authData => {
+
+                let newUser = {
+                    email,
+                    name,
+                    phoneNumber,
+                    userId: authData.user.uid,
+                }
+
+                authService.createNewUser(newUser, authData.accessToken);
+
+
                 login(authData);
                 showNotification(`You have successfully registered`, types.success);
                 navigate('/all-phones');
             })
             .catch(err => console.error(err))
+
+
+
     };
 
     const onBlurValidationHandler = (e) => {

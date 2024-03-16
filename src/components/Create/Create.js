@@ -13,16 +13,14 @@ const Create = () => {
     const navigate = useNavigate();
 
     const createNewAd = (formData) => {
-        const ownerName = user.name;
-        const ownerPhoneNumber = user.phoneNumber;
-        const ownerEmail = user.email;
+        const ownerId = user._id;
 
-        const phoneData = { ...formData, ownerName, ownerPhoneNumber, ownerEmail };
+        const phoneData = { ...formData, ownerId };
 
         phoneServices.create(phoneData, user.accessToken)
             .then((res) => res.json())
             .then(data => {
-                navigate(`/details/${data._id}`);
+                navigate(`/details/${data.name}`);
                 showNotification('You successfully create an ad for your phone', types.success);
             })
             .catch(err => console.error(err))

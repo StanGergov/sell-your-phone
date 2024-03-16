@@ -16,8 +16,10 @@ export const AuthProvider = ({ children }) => {
     const [user, setUser] = useLocalStorage('user', initialAuthState);
 
     const login = (authData) => {
-        const {_id, name, phoneNumber, email, accessToken} = authData;
-        setUser({_id, name, phoneNumber, email, accessToken});
+        const {uid, name, phoneNumber, email, accessToken} = authData.user;
+        setUser({_id: uid, name, phoneNumber, email, accessToken});
+
+        console.log(authData);
     }
 
     const logout = () => {

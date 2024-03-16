@@ -21,9 +21,12 @@ const Login = () => {
     const onLogin = (e) => {
         e.preventDefault();
 
+        const { email, password } = Object.fromEntries(new FormData(e.currentTarget));
+
         authService.login(email, password)
             .then((authData) => {
-                if (authData.message) {
+                
+                if (!authData.user) {
                     return (
                         showNotification('Wrong email or password!', types.error)
                     )

@@ -5,11 +5,10 @@ import PhoneList from '../Common/PhoneList/PhoneList';
 import NoPhonesMessage from '../Common/NoPhonesMessage/NoPhonesMessage';
 import Loadig from '../Common/Loading/Loading';
 
-import demoPhones from '../Common/demoPhones';
 
 const AllPhones = () => {
 
-    const [phones, setPhones] = useState(demoPhones);
+    const [phones, setPhones] = useState([]);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -23,9 +22,12 @@ const AllPhones = () => {
         phoneServices.getAll()
             .then(res => res.json())
             .then(data => {
-                if (Array.isArray(data)) {
-                    setPhones([...phones, ...data]);
-                }
+                
+                let allPhones = [];
+
+                Object.entries(data).forEach(x => allPhones.push({_id: x[0], ...x[1]}));
+                
+                setPhones(allPhones);
             })
             .catch(err => console.log(err));
 

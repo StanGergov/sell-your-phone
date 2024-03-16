@@ -9,14 +9,12 @@ import NoPhonesMessage from '../Common/NoPhonesMessage/NoPhonesMessage';
 import Loadig from '../Common/Loading/Loading';
 
 import '../MyPhones/MyPhones.css'
-import demoPhones from '../Common/demoPhones';
 
 const Myphones = () => {
 
     const { user } = useAuthContext();
-    let myDemoPhones = demoPhones.filter(x => x._ownerId === user._id);
 
-    const [phones, setPhones] = useState(myDemoPhones);
+    const [phones, setPhones] = useState([]);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
@@ -27,12 +25,19 @@ const Myphones = () => {
     }, []);
 
     useEffect(() => {
-        phoneServices.getMyPhones(user._id)
+        
+        phoneServices.getAll()
         .then(res => res.json())
         .then(data => {
-                if (Array.isArray(data)) {
-                    setPhones([...phones, ...data]);
-                }
+            
+            let phonesWithId = [];
+
+            Object.entries(data).forEach(x => phonesWithId.push({_id: x[0], ...x[1]}));
+
+            let myPhones = Object.values(phonesWithId).filter(x => x.ownerId === user._id);
+            
+            setPhones(myPhones);
+        
             })
             .catch(err => console.log(err));
     

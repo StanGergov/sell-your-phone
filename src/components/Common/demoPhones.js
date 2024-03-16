@@ -1,4 +1,4 @@
-const demoPhones = [
+let demoPhones = [
     {
         "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
         "brand": "Samsung ",
@@ -185,20 +185,21 @@ const demoPhones = [
         "_createdOn": 1708708251209,
         "_id": "569044d1-fa11-4828-8d0d-50818494015e"
     },
-    {
-        "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-        "brand": "Blackberry",
-        "model": "9800",
-        "color": "Black",
-        "imgUrl": "https://m.media-amazon.com/images/I/81WsLyAh4YL._AC_UF1000,1000_QL80_.jpg",
-        "grade": "3: Normal, with a few scratches",
-        "accessories": "Box, cable, charger",
-        "notes": "",
-        "price": "50",
-        "ownerEmail": "peter@abv.bg",
-        "_createdOn": 1708708346667,
-        "_id": "e49dd0b1-803c-4f11-ad6c-f4ec0db5fff3"
-    }
+{
+    "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+    "brand": "Blackberry",
+    "model": "9800",
+    "color": "Black",
+    "imgUrl": "https://m.media-amazon.com/images/I/81WsLyAh4YL._AC_UF1000,1000_QL80_.jpg",
+    "grade": "3: Normal, with a few scratches",
+    "accessories": "Box, cable, charger",
+    "notes": "",
+    "price": "50",
+    "ownerEmail": "peter@abv.bg",
+    "_createdOn": 1708708346667,
+    "_id": "e49dd0b1-803c-4f11-ad6c-f4ec0db5fff3"
+}
 ];
+
 
 export default demoPhones;
