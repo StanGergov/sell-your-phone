@@ -1,15 +1,25 @@
 {
   "files": {
-    "main.css": "/sell-your-phone/static/css/main.c7680fd4.css",
-    "main.js": "/sell-your-phone/static/js/main.5ba93641.js",
-    "static/js/453.aee30cc2.chunk.js": "/sell-your-phone/static/js/453.aee30cc2.chunk.js",
+    "main.css": "/sell-your-phone/static/css/main.27ef319a.chunk.css",
+    "main.js": "/sell-your-phone/static/js/main.7f7b7fda.chunk.js",
+    "main.js.map": "/sell-your-phone/static/js/main.7f7b7fda.chunk.js.map",
+    "runtime-main.js": "/sell-your-phone/static/js/runtime-main.4900c5d2.js",
+    "runtime-main.js.map": "/sell-your-phone/static/js/runtime-main.4900c5d2.js.map",
+    "static/css/2.f1b2261f.chunk.css": "/sell-your-phone/static/css/2.f1b2261f.chunk.css",
+    "static/js/2.fbb90455.chunk.js": "/sell-your-phone/static/js/2.fbb90455.chunk.js",
+    "static/js/2.fbb90455.chunk.js.map": "/sell-your-phone/static/js/2.fbb90455.chunk.js.map",
+    "static/js/3.45a55a74.chunk.js": "/sell-your-phone/static/js/3.45a55a74.chunk.js",
+    "static/js/3.45a55a74.chunk.js.map": "/sell-your-phone/static/js/3.45a55a74.chunk.js.map",
     "index.html": "/sell-your-phone/index.html",
-    "main.c7680fd4.css.map": "/sell-your-phone/static/css/main.c7680fd4.css.map",
-    "main.5ba93641.js.map": "/sell-your-phone/static/js/main.5ba93641.js.map",
-    "453.aee30cc2.chunk.js.map": "/sell-your-phone/static/js/453.aee30cc2.chunk.js.map"
+    "static/css/2.f1b2261f.chunk.css.map": "/sell-your-phone/static/css/2.f1b2261f.chunk.css.map",
+    "static/css/main.27ef319a.chunk.css.map": "/sell-your-phone/static/css/main.27ef319a.chunk.css.map",
+    "static/js/2.fbb90455.chunk.js.LICENSE.txt": "/sell-your-phone/static/js/2.fbb90455.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/css/main.c7680fd4.css",
-    "static/js/main.5ba93641.js"
+    "static/js/runtime-main.4900c5d2.js",
+    "static/css/2.f1b2261f.chunk.css",
+    "static/js/2.fbb90455.chunk.js",
+    "static/css/main.27ef319a.chunk.css",
+    "static/js/main.7f7b7fda.chunk.js"
   ]
 }
