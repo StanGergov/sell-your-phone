@@ -133,12 +133,17 @@
 
     .header-buttons {
         flex-direction: column;
+        width: 70%;
+        margin: auto;
+        text-align: center;
     }
 
     .header-buttons :hover{
         padding: 5px 15px;
         border-radius: 15px;
         background-color: lightgrey;
+        align-items: center;
+
     }
   
 }

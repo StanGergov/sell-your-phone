@@ -56,23 +56,47 @@ const Header = () => {
 
     );
 
+    // function hideShowToggle(e) {
+
+
+    //     let dropDownMenuParentElement = e.currentTarget.parentElement.parentElement;
+    //     dropDownMenuParentElement.className = 'dropdown show' ? 'dropdown' : 'dropdown show';
+    //     let dropDownBasicElement = dropDownMenuParentElement.querySelector('#dropdown-basic'); 
+    //     dropDownBasicElement['aria-expanded'] = 'false' ? '' : 'false';
+
+    //     let dropDownMenuElement = dropDownMenuParentElement.querySelector('.dropdown-menu');
+
+    //     console.log(dropDownMenuParentElement);
+
+    //     if (dropDownMenuElement) {
+    //         dropDownMenuElement.className = 'dropdown-menu show' ? 'dropdown-menu' : 'dropdown-menu show';
+    //     }
+    // }
+
     const mobileNavbar = (
         <>
 
-            <Dropdown>
+            <Dropdown >
                 <Dropdown.Toggle variant="success" id="dropdown-basic">
                     Menu
                 </Dropdown.Toggle>
 
                 <Dropdown.Menu>
-                    <Nav className="header-buttons">
-                        <Nav.Link as={Link} to="/all-phones">All phones</Nav.Link>
+                    <div className="header-buttons">
+                        <Dropdown.Item as={Link} to="/all-phones">All phones</Dropdown.Item>
                         {
                             user.email
-                                ? userNav
-                                : guestNav
+                                ? <>
+                                    <Dropdown.Item as={Link} to="/my-phones">My phones</Dropdown.Item>
+                                    <Dropdown.Item as={Link} to="/create">Create ad</Dropdown.Item>
+                                    <Dropdown.Item as={Link} to="/logout">Logout</Dropdown.Item>
+                                </>
+                                : <>
+                                    <Dropdown.Item as={Link} to="/login">Login</Dropdown.Item>
+                                    <Dropdown.Item as={Link} to="register">Register</Dropdown.Item>
+                                </>
                         }
-                    </Nav>
+                    </div>
                 </Dropdown.Menu>
             </Dropdown>
         </>
