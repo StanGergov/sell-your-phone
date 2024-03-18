@@ -10,13 +10,13 @@ The app is running on:
 
 https://stangergov.github.io/sell-your-phone/
 
-It's connectet to firebase so all the functionality is working (register, login, creat or eddit posts)
+It's connectet to firebase so all the functionality are working (register, login, creat or eddit posts)
 
 
 ### Default users are:
     pesho@abv.bg: asdasd
     stan@gmail.com : asdasd
-For testing proposit there is no email verification so can be register with not real email (just keep standard email format).
+For testing purposes there is no email verification so can be register with not real email (just keep standard email format).
 
 
 ## Available Scripts
